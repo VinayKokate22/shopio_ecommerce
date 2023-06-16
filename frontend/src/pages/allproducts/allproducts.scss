@@ -1,0 +1,115 @@
+.Product_page {
+  width: 85%;
+  margin: auto;
+  .Product_section {
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+    }
+
+    h2 {
+      margin: 2rem 0 3rem 0;
+      font-size: 2rem;
+    }
+    .category_wrapper {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      height: 10rem;
+      .singleCat_wrapper {
+        width: 100%;
+        height: 100%;
+        background-color: #e1e1e1;
+        border-radius: 0.5rem;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 0.5rem;
+        }
+        .overlay {
+          width: 100%;
+          height: 100%;
+          border-radius: 0.5rem;
+          background-color: #0000001e;
+          top: 0;
+          position: absolute;
+          display: flex;
+          //   align-items: center;
+          justify-content: center;
+          Button {
+            margin-top: 6.5rem;
+            text-transform: capitalize;
+            color: black;
+            width: 85%;
+            font-size: 1rem;
+            height: fit-content;
+            background-color: white;
+            box-shadow: none;
+            border: none;
+            border-radius: 0.5rem;
+            &:hover {
+              background-color: rgb(208, 208, 208);
+            }
+          }
+        }
+      }
+    }
+    .set_filter_wrapper {
+      display: flex;
+      margin-top: 3rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .single_filter_component {
+        pointer-events: auto;
+        border: 3px solid #f5f5f5;
+        background-color: #ffffff;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        p {
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+      .rating_filter {
+        width: fit-content;
+      }
+    }
+    .setfilter {
+      background-color: #040421;
+      box-shadow: none;
+      border: none;
+      color: white;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      // padding: 2rem 0;
+      &:hover {
+        background-color: #424242;
+      }
+    }
+    Button {
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      &:hover {
+        background-color: #aeaeae;
+      }
+    }
+    .Container {
+      // margin-top: 5rem;
+      display: flex;
+      justify-content: space-between;
+      row-gap: 4rem;
+      flex-wrap: wrap;
+    }
+  }
+  .pagination {
+    margin-top: 5rem;
+    ul {
+      justify-content: center;
+    }
+  }
+}

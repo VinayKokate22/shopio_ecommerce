@@ -1,0 +1,29 @@
+.dashboard_page {
+  width: 85%;
+  margin: auto;
+}
+.dashboard_page .dashboard_option {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  border: 3px solid #f5f5f5;
+  border-radius: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.dashboard_page .dashboard_option ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+.dashboard_page .dashboard_option ul li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(64, 62, 71);
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+.dashboard_page .dashboard_option ul li:hover {
+  background-color: #e1e1e1;
+}/*# sourceMappingURL=dashboard.css.map */

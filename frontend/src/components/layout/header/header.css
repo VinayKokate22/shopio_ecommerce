@@ -1,0 +1,65 @@
+.navbar {
+  width: 85%;
+  margin: auto;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgb(255, 255, 255);
+}
+.navbar li {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(98, 98, 98);
+}
+.navbar li:hover {
+  color: black;
+}
+.navbar .navbar_leftsection {
+  flex: 1;
+}
+.navbar .navbar_leftsection span {
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.navbar .navbar_middlesection {
+  flex: 1;
+}
+.navbar .navbar_middlesection ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.navbar .navbar_middlesection ul li {
+  text-transform: capitalize;
+}
+.navbar .navbar_rightsection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar .navbar_rightsection .SpeedDialIcon {
+  position: absolute;
+  top: 1.8rem;
+  right: -5rem;
+}
+.navbar .navbar_rightsection .SpeedDialIcon button {
+  box-shadow: none;
+}
+.navbar .navbar_rightsection ul {
+  display: flex;
+  gap: 1rem;
+}
+.navbar .navbar_rightsection li {
+  list-style: none;
+}
+.navbar .navbar_rightsection li input {
+  border: none;
+  background-color: #e1e1e1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=header.css.map */

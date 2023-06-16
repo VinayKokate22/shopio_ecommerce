@@ -1,0 +1,57 @@
+.Accout_page {
+  width: 85%;
+  margin: auto;
+}
+.Accout_page .account_section {
+  margin-top: 3rem;
+  display: flex;
+}
+.Accout_page .account_section .profile_card {
+  width: 100%;
+  border: 3px solid #f5f5f5;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.Accout_page .account_section .profile_card .account_info {
+  background-image: url("https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg?w=1060&t=st=1686752997~exp=1686753597~hmac=8b5e1619251d18e24423f67f2c1c98354ab8bef49084a346869803cdcddf2b98");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+  height: 11rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.Accout_page .account_section .profile_card .account_info img {
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  top: 4rem;
+  left: 5rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top; /* Move the image to the center vertically and aligned to the top */
+}
+.Accout_page .account_section .profile_card .account_info b {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(64, 62, 71);
+  text-transform: capitalize;
+}
+.Accout_page .account_section .profile_card .accout_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0rem 1rem 5rem;
+}
+.Accout_page .account_section .profile_card .accout_details button {
+  margin-right: 1rem;
+  background-color: #040421;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}/*# sourceMappingURL=account.css.map */

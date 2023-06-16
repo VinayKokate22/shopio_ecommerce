@@ -1,0 +1,75 @@
+.createProductForm {
+  width: 30rem;
+  border: 3px solid #f5f5f5;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.createProductForm .oldimage_edit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.createProductForm input,
+.createProductForm textarea,
+.createProductForm select {
+  background-color: #f5f5f5;
+  max-width: 100%;
+  width: 100%;
+  border: none;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.5rem;
+}
+.createProductForm button {
+  background-color: #040421;
+  color: white;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.productedit_page {
+  width: 85%;
+  margin: 0 auto;
+}
+.productedit_page .productedit_section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.productedit_page .productedit_section .product_detail_section {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.productedit_page .productedit_section .product_detail_section .main_image {
+  width: 20rem;
+  height: 25rem;
+}
+.productedit_page .productedit_section .product_detail_section .Extra_image img {
+  width: 5rem;
+  height: 5rem;
+}
+.productedit_page .productedit_section .product_detail_section .product_detail_wrapper {
+  gap: 1rem;
+}
+.productedit_page .productedit_section .product_detail_section .product_info {
+  max-width: 20rem;
+  overflow-x: hidden;
+}
+.productedit_page .productedit_section .product_detail_section .product_info h2,
+.productedit_page .productedit_section .product_detail_section .product_info p,
+.productedit_page .productedit_section .product_detail_section .product_info span {
+  font-size: 1rem;
+}
+.productedit_page .productedit_section .product_detail_section .product_info h2 {
+  line-height: 2rem;
+}
+.productedit_page .productedit_section .product_detail_section .product_info .addtocart {
+  padding: 0.5rem;
+}/*# sourceMappingURL=manageproduct.css.map */

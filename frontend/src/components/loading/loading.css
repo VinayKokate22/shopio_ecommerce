@@ -1,0 +1,46 @@
+:root {
+  --main: #ffffff;
+  --sec: #75baff;
+  --little-cursor: #003f7e;
+}
+
+#outer {
+  margin: auto;
+  margin-top: 15%;
+  background: var(--main);
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+}
+
+#middle {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  border-radius: 50%;
+  background-image: linear-gradient(150deg, transparent 50%, var(--sec) 50%), linear-gradient(90deg, var(--sec) 50%, var(--little-cursor) 50%);
+  animation: rotation 1200ms infinite linear;
+  transform-origin: 50% 50%;
+  animation-timing-function: ease;
+}
+
+#inner {
+  background: var(--main);
+  height: 48px;
+  width: 48px;
+  margin: auto;
+  position: relative;
+  top: 6px;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}/*# sourceMappingURL=loading.css.map */

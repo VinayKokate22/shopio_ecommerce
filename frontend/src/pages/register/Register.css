@@ -1,0 +1,143 @@
+.login_page {
+  height: fit-content;
+  min-height: 100vh;
+  display: flex;
+}
+.createaccount {
+  color: var(--colortheme);
+  cursor: pointer;
+  position: relative;
+}
+.createaccount::after {
+  content: "";
+  width: 0;
+  background: var(--colortheme);
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  transition: 0.3s;
+}
+.createaccount:hover::after {
+  width: 100%;
+}
+
+.login_page_background_img {
+  background: linear-gradient(rgba(0, 0, 0, 0.723), rgba(0, 0, 0, 0)),
+    url(https://img.freepik.com/free-photo/happy-elegant-woman-sitting-car-with-fastened-seatbelt-driving-work-female-driver-smiling-camera-looking-out-window_197531-30470.jpg?w=1060&t=st=1676125030~exp=1676125630~hmac=b524b29c5cea34856c5d6dcfa1a6ac85195cd5ffaea0bc6fa356fda3db85405f);
+  flex: 1.5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.signup_page_background_img {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url(https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?w=740&t=st=1676050812~exp=1676051412~hmac=dff4540b159fe8792bcc1cd69ba760d86af125a49ff4a790981e05123d85a76e);
+  flex: 1.5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.login_credentials {
+  background-color: rgb(0, 0, 0);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 1rem 2rem;
+}
+.login_credentials_card {
+  display: flex;
+  flex-direction: column;
+}
+.login_title h2 {
+  color: transparent;
+  font-family: "Syne", sans-serif;
+  -webkit-text-stroke: 1px #fff;
+  font-size: 6rem;
+  margin: 4rem 0;
+}
+.login_title p {
+  margin: 4rem 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+.login_credentials_card input {
+  background-color: transparent;
+  border: none;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.37);
+  color: white;
+  font-size: 1.1rem;
+}
+.login_credentials_card button {
+  width: fit-content;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+fieldset {
+  border: none;
+}
+@media screen and (max-width: 1100px) {
+}
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 650px) {
+  .login_page {
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+  }
+  .login_page_background_img {
+    display: none;
+  }
+  .signup_page_background_img {
+    display: none;
+  }
+  .login_title h2 {
+    color: transparent;
+    font-family: "Syne", sans-serif;
+    -webkit-text-stroke: 1px #fff;
+    font-size: 3rem;
+    margin: 2rem 0 0 0;
+  }
+  .login_title p {
+    margin: 2rem 0;
+    font-size: small;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .login_credentials_card input {
+    background-color: transparent;
+    border: none;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-bottom: 2px solid var(--colortheme);
+    color: white;
+    background-color: rgb(55, 55, 55);
+    border-radius: 5px;
+    font-size: small;
+  }
+  .login_credentials_card input:focus {
+    border: none;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+  }
+  .login_credentials_card label {
+    font-size: small;
+  }
+  .login_credentials_card button {
+    width: fit-content;
+    margin: 1rem 0;
+    font-size: small;
+    background-color: var(--colortheme);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}

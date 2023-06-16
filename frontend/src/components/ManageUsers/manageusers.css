@@ -1,0 +1,52 @@
+.allusersPage {
+  margin-top: 2rem;
+}
+.allusersPage .indexUser {
+  margin-top: 2rem;
+}
+.allusersPage .indexUser ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.allusersPage .indexUser ul li {
+  width: 8rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(125, 124, 129);
+}
+.allusersPage .single_user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.allusersPage .single_user ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.allusersPage .single_user ul .userrole select {
+  border: none;
+  list-style: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.allusersPage .single_user ul li,
+.allusersPage .single_user ul select {
+  width: 8rem;
+}
+.allusersPage .single_user ul .delete_user {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+}
+.allusersPage span {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 0.15rem;
+  margin: 1rem 0;
+}/*# sourceMappingURL=manageusers.css.map */

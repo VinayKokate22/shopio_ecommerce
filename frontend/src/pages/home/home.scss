@@ -1,0 +1,118 @@
+@keyframes slider {
+  0% {
+    background-image: url("https://img.freepik.com/free-photo/trendy-fashionable-couple-isolated-white-studio-background_155003-41890.jpg?w=1060&t=st=1686595087~exp=1686595687~hmac=77995d6615680659445c02fb217026aa171549be26c9233c0478e8eac4f499cb");
+  }
+  25% {
+    background-image: url("https://img.freepik.com/free-vector/household-appliances-realistic-composition_1284-65307.jpg?w=1380&t=st=1686655959~exp=1686656559~hmac=5f6d8812c254ddd4cf476f54f0bb10fb0517851183440a73b2feb9d74fde8293");
+  }
+  50% {
+    background-image: url("https://i.stack.imgur.com/disqW.png");
+  }
+  100% {
+    background-image: url("https://i.pinimg.com/564x/cf/3d/b3/cf3db3f657af0f7edc4d3cdcd16e05dd.jpg");
+  }
+}
+.hero_page {
+  width: 85%;
+  margin: 0rem auto;
+}
+.hero_section {
+  height: 35rem;
+  width: 100%;
+  margin-top: 1rem;
+  background-image: url("https://img.freepik.com/free-photo/trendy-fashionable-couple-isolated-white-studio-background_155003-41890.jpg?w=1060&t=st=1686595087~exp=1686595687~hmac=77995d6615680659445c02fb217026aa171549be26c9233c0478e8eac4f499cb");
+  // background-size: cover;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // animation-name: slider;
+  // animation-duration: 8s;
+  .overlay_div {
+    z-index: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 5rem;
+      line-height: 6rem;
+      margin-bottom: 2rem;
+    }
+    .button {
+      font-family: "Poppins", sans-serif;
+
+      text-transform: capitalize;
+      color: rgb(39, 39, 39);
+      background-color: white;
+      border: none;
+      padding: 0.5rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: rgb(206, 200, 194);
+    }
+  }
+  .overlay {
+    height: 35rem;
+    position: absolute;
+    width: 100%;
+    background-color: #00000044;
+    border-radius: 1rem;
+  }
+}
+.Product_section {
+  h2 {
+    margin: 8rem 0 3rem 0;
+    font-size: 2rem;
+  }
+  .Container {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 3rem;
+    flex-wrap: wrap;
+  }
+}
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #d7dbdd;
+  border-radius: 0.3rem;
+  height: 0.4rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -0.4rem; /* Centers thumb on the track */
+
+  /*custom styles*/
+  background-color: #606670;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}

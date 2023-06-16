@@ -1,0 +1,16 @@
+.footer-distributed {
+  display: flex;
+  background-color: #e1e1e1;
+  align-items: center;
+  padding: 4rem 8rem 6rem;
+  margin-top: 6rem;
+}
+.footer-distributed .footer-left {
+  flex: 1;
+}
+.footer-distributed .footer-center {
+  flex: 1;
+}
+.footer-distributed .footer-right {
+  flex: 1;
+}/*# sourceMappingURL=footer.css.map */

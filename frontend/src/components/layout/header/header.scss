@@ -1,0 +1,67 @@
+.navbar {
+  width: 85%;
+  margin: auto;
+  // box-shadow: 0 0 10px 10px gray;
+  li {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(98, 98, 98);
+  }
+  li:hover {
+    color: black;
+  }
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgb(255, 255, 255);
+  .navbar_leftsection {
+    flex: 1;
+    span {
+      font-size: 2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  .navbar_middlesection {
+    flex: 1;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      li {
+        text-transform: capitalize;
+      }
+    }
+  }
+  .navbar_rightsection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .SpeedDialIcon {
+      position: absolute;
+      top: 1.8rem;
+      right: -5rem;
+      button {
+        box-shadow: none;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 1rem;
+    }
+    li {
+      list-style: none;
+      input {
+        border: none;
+        background-color: #e1e1e1;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
