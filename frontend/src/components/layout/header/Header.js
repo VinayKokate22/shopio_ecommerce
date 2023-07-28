@@ -176,7 +176,7 @@ const Header = () => {
                           } else {
                             navigate(action.link);
                           }
-                          // handleClose();
+                          handleClose();
                         }}
                       />
                     ))}
