@@ -14,7 +14,9 @@ const ManageOrder = () => {
         const res = await axios.get("api/v1/admin/orders");
         console.log(res.data);
         setAllorders(res.data);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
     getAllorders();
   }, []);
@@ -46,6 +48,7 @@ const ManageOrder = () => {
               }
             }}
           >
+            {/* span is for horizontal gray line */}
             <span></span>
             <ul className="singleorder_list">
               {e.orderItem.forEach((event) => {
