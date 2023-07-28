@@ -13,21 +13,9 @@ const DashboardInfo = () => {
         const Productresponse = await axios.get("/api/v1/allproduct");
         const Userresponse = await axios.get("/api/v1/admin/users");
         const Orderresponse = await axios.get("api/v1/admin/orders");
-        const Productdata = Productresponse.data;
-
-        const Userdata = Userresponse.data.users;
-        setuserdata(Userdata);
-        setproductdata(Productdata);
+        setuserdata(Productresponse.data);
+        setproductdata(Userresponse.data.users);
         setorderdata(Orderresponse.data);
-        const totalProduct = Productdata.productCount;
-        // var outofstockProduct = 1;
-        // Productdata.product.forEach((e) => {
-        //   console.log("e.stock", e._id, e.stock);
-        //   if (e.stock == 0) {
-        //     outofstockProduct = outofstockProduct + 1;
-        //   }
-        // });
-        // console.log("outofstockProduct", outofstockProduct);
       } catch (error) {
         console.log(error);
         toast.error(error.message);
