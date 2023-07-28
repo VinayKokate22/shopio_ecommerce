@@ -19,6 +19,8 @@ import {
   updatecart,
 } from "../../../store/slices/CartSlice";
 const Header = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleLogout = async () => {
     try {
       toast.info("Loading...", { toastId: "loadingToast" });
@@ -29,8 +31,6 @@ const Header = () => {
         dispatch(Userloading());
         toast.dismiss("loadingToast");
 
-        console.log("console.log(1)");
-        // if (!toast.isActive("successToast")) {
         toast.success("Logout Successful", {
           toastId: "successToast",
           hideProgressBar: true,
@@ -47,12 +47,12 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [Search, setSearch] = useState("");
   const data = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   console.log("the cart is ", cart);
+
+  //use of spread operator const arr=[...otherarray]
   const actions = [
     ...(data.User?.role === "admin"
       ? [
@@ -75,6 +75,7 @@ const Header = () => {
     const loggedInUser = localStorage.getItem("user");
     const loggedInUserCart = localStorage.getItem("cart");
     if (loggedInUser) {
+      //parse because we have used JSON.stringfy while storing the data in localstorage
       const foundUser = JSON.parse(loggedInUser);
       dispatch(Usersuccessfull(foundUser));
       if (loggedInUserCart) {
@@ -175,8 +176,7 @@ const Header = () => {
                           } else {
                             navigate(action.link);
                           }
-
-                          handleClose();
+                          // handleClose();
                         }}
                       />
                     ))}

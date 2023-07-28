@@ -13,8 +13,8 @@ const DashboardInfo = () => {
         const Productresponse = await axios.get("/api/v1/allproduct");
         const Userresponse = await axios.get("/api/v1/admin/users");
         const Orderresponse = await axios.get("api/v1/admin/orders");
-        setuserdata(Productresponse.data);
-        setproductdata(Userresponse.data.users);
+        setuserdata(Userresponse.data.users);
+        setproductdata(Productresponse.data);
         setorderdata(Orderresponse.data);
       } catch (error) {
         console.log(error);
