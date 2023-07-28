@@ -1,0 +1,23 @@
+.dashboardinfo_section {
+  margin-top: 2rem;
+}
+.dashboardinfo_section .dashboardinfo_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.dashboardinfo_section .dashboardinfo_container .dashboardtotalinfo {
+  display: flex;
+  gap: 2rem;
+}
+.dashboardinfo_section .dashboardinfo_container .dashboardinfo_singleContainer {
+  width: 20rem;
+  height: 10rem;
+  padding: 1rem;
+  border: 3px solid #f1f1f1;
+  border-radius: 0.5rem;
+}
+.dashboardinfo_section .dashboardinfo_container .dashboardinfo_singleContainer h2 {
+  font-size: 4rem;
+  color: rgb(87, 87, 87);
+}/*# sourceMappingURL=dashboardinfo.css.map */

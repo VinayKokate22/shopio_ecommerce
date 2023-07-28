@@ -34,7 +34,6 @@ const Header = () => {
         toast.success("Logout Successful", {
           toastId: "successToast",
           hideProgressBar: true,
-          // });
         });
       }
       console.log(res.data);
@@ -66,7 +65,7 @@ const Header = () => {
         ]
       : [{ icon: <AccountCircleIcon />, name: "Account", link: "Account" }]),
     { icon: <ListAltIcon />, name: "Orders", link: "Process/Orders" },
-    { icon: <LogoutIcon />, name: "Logout", link: "Logout" },
+    { icon: <LogoutIcon />, name: "Logout" },
   ];
   const handleSearch = (e) => {
     e.preventDefault();

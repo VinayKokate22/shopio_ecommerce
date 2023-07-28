@@ -11,6 +11,7 @@ const errorHandler = require("./middleware/errorHandler");
 const morgan = require("morgan");
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookie());
 app.use(morgan("tiny"));
 app.use("/api/v1", productroute);

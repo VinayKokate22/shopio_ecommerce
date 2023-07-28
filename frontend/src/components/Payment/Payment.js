@@ -7,17 +7,59 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { clearCart } from "../../store/slices/CartSlice";
 const Payment = ({ address, Amount, stripeApiKey }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
+  const { cart } = useSelector((state) => state.cart);
+  console.log(cart);
+  const orderItems = cart?.map((e) => {
+    return {
+      name: e.Product.name,
+      price: e.Product.price,
+      quantity: e.itemCount,
+      image: e.Product.image[0].url,
+      product: e.Product._id,
+    };
+  });
+  const shippingInfo = {
+    address: address.address,
+    city: address.city,
+    country: address.country,
+    pinCode: address.pincode,
+    phoneNo: address.phone,
+  };
+  console.log("orderItems", orderItems);
+  console.log("address", address);
+  const data = {
+    shippingInfo: shippingInfo,
+    orderItem: orderItems,
+    paymentInfo: {
+      id: "343243214",
+      status: "paid",
+    },
+    itemPrice: Amount.price,
+    taxPrice: Amount.gst,
+    shippingPrice: 50,
+    totalPrice: Amount.totalprice,
+  };
   // const stripe = useStripe();
   // const elements = useElements();
+  console.log(data);
   const handlePayment = async (e) => {
     e.preventDefault();
-    console.log("stripeApiKey", stripeApiKey);
+    try {
+      const res = await axios.post("/api/v1/order/new", data);
+      console.log("payment", res.data);
+      dispatch(clearCart());
+    } catch (error) {
+      toast.error(error.message);
+    }
+    // console.log("stripeApiKey", stripeApiKey);
     // const { data } = await axios.post(
     //   " http://localhost:4000/api/v1/payment/process",
     //   {
@@ -56,9 +98,9 @@ const Payment = ({ address, Amount, stripeApiKey }) => {
   return (
     <div>
       <form action="" onSubmit={handlePayment}>
-        <CardNumberElement />
+        {/* <CardNumberElement />
         <CardExpiryElement />
-        <CardCvcElement />
+        <CardCvcElement /> */}
         <button type="submit">Pay</button>
       </form>
     </div>

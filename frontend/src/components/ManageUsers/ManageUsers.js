@@ -16,9 +16,8 @@ const ManageUsers = () => {
       const { data } = await axios.delete(`/api/v1/admin/users/${id}`);
       console.log(data);
       setDelete(!Delete);
-      {
-        Delete && toast.success(data.message);
-      }
+
+      toast.success(data.message);
     } catch (error) {
       toast.error(error.message);
     }
@@ -78,6 +77,7 @@ const ManageUsers = () => {
                           setchange(false);
                           console.log(res.data);
                         } catch (error) {
+                          setchange(false);
                           toast.error(error.message);
                         }
                       }}

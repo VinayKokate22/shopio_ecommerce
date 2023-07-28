@@ -25,7 +25,7 @@ const Dashboard = () => {
   };
 
   const [index, setindex] = useState(0);
-  const option = ["Dashboard", "Product", "Orders", "Users", "Reviews"];
+  const option = ["Dashboard", "Product", "Orders", "Users"];
   return (
     <div className="dashboard_page">
       <div className="dashboard_option">
@@ -47,7 +47,6 @@ const Dashboard = () => {
         {index == 1 && <ManageProduct />}
         {index == 2 && <ManageOrder />}
         {index == 3 && <ManageUsers />}
-        {index == 4 && <ManageReviews />}
       </div>
     </div>
   );

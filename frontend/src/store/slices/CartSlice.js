@@ -61,6 +61,22 @@ const CartSlice = createSlice({
       state.CartCount = state.CartCount + CartCount;
       state.error = false;
     },
+    deleteProduct(state, action) {
+      state.loading = false;
+      const newData = action.payload;
+      const existingItem = state.cart.find(
+        (item) => item.Product._id === newData.Product._id
+      );
+
+      if (existingItem) {
+        state.cart = state.cart.filter(
+          (item) => item.Product._id !== newData.Product._id
+        );
+        state.CartCount = state.CartCount - action.payload.itemCount;
+        toast("Deleted from Cart");
+        state.error = false;
+      }
+    },
     fetchCart(state, action) {
       state.loading = action.payload.loading;
       state.cart = action.payload.cart;
@@ -74,5 +90,5 @@ const CartSlice = createSlice({
   },
 });
 export default CartSlice.reducer;
-export const { updatecart, updateCount, fetchCart, clearCart } =
+export const { updatecart, updateCount, fetchCart, clearCart, deleteProduct } =
   CartSlice.actions;

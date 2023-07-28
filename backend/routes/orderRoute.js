@@ -14,13 +14,13 @@ router.route("/order/new").post(isAuthenticatedUser, newOrder);
 router
   .route("/order/:id")
   .post(isAuthenticatedUser, authorizeRoles("admin"), getSingleOrder);
-router.route("/order/me").post(isAuthenticatedUser, myOrder);
+router.route("/order/me").get(isAuthenticatedUser, myOrder);
 router
   .route("/admin/orders")
   .get(isAuthenticatedUser, authorizeRoles("admin"), getAllOrders);
 router
   .route("/admin/order/:id")
-  .get(isAuthenticatedUser, authorizeRoles("admin"), updateOrder)
+  .post(isAuthenticatedUser, authorizeRoles("admin"), updateOrder)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteOrders);
 
 module.exports = router;

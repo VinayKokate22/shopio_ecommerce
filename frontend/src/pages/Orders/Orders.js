@@ -135,11 +135,7 @@ const Orders = ({ stripeApiKey }) => {
 
       {activeStep === 3 && (
         // Render component or content for 3
-        <Payment
-          stripeApiKey={stripeApiKey}
-          Amount={Amount}
-          address={initialState}
-        />
+        <Payment stripeApiKey={stripeApiKey} Amount={Amount} address={form} />
       )}
 
       <button

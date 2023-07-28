@@ -10,9 +10,9 @@ const isAuthenticatedUser = asyncHandler(async (req, res, next) => {
       throw new Error("please login to access this resource");
     }
     const decodedData = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("decodedData and token", { decodedData, token });
+
     req.user = await User.findById(decodedData.id);
-    console.log("User in auth function", req.user);
+
     next();
   } catch (error) {
     res.status(401);
@@ -21,7 +21,6 @@ const isAuthenticatedUser = asyncHandler(async (req, res, next) => {
 });
 const authorizeRoles = (...roles) => {
   return (req, res, next) => {
-    console.log(req.user);
     if (!roles.includes(req.user.role)) {
       res.status(401);
       throw new Error(

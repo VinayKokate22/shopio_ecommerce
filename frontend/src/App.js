@@ -1,6 +1,11 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/home/Home";
 import ProductDetails from "./pages/productdetails/ProductDetails";
 import AllProducts from "./pages/allproducts/AllProducts";
@@ -16,12 +21,14 @@ import Orders from "./pages/Orders/Orders";
 import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ProductEdit from "./components/ProductEdit/ProductEdit";
+import { useSelector } from "react-redux";
 // import { Elements } from "@stripe/react-stripe-js";
 // import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
   const [stripeApiKey, setstripeApiKey] = useState(null);
-
+  const user = useSelector((state) => state.user);
+  console.log("the user is", user);
   useEffect(() => {
     // const getStripeApikey = async () => {
     //   try {
@@ -40,24 +47,46 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path="/" Component={Home} />
-        <Route exact path="/product/:id" Component={ProductDetails} />
-        <Route exact path="/products" Component={AllProducts} />
-        <Route exact path="/login" Component={Login} />
-        <Route exact path="/register" Component={Register} />
-        <Route exact path="/Account" Component={Account} />
-        <Route exact path="/Cart" Component={Cart} />
-        <Route exact path="/Dashboard" Component={Dashboard} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/product/:id" element={<ProductDetails />} />
+        <Route exact path="/products" element={<AllProducts />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route
+          exact
+          path="/Account"
+          element={user?.User ? <Account /> : <Login />}
+        />
+        <Route exact path="/Cart" element={<Cart />} />
+        <Route
+          exact
+          path="/Dashboard"
+          element={
+            user?.User && user?.User.role === "admin" ? (
+              <Dashboard />
+            ) : (
+              <Login />
+            )
+          }
+        />
         <Route
           exact
           path="/Dashboard/ProductEdit/:id"
-          Component={ProductEdit}
+          element={
+            user?.User && user?.User.role === "admin" ? (
+              <ProductEdit />
+            ) : (
+              <Login />
+            )
+          }
         />
 
         <Route
           exact
           path="/Process/Orders"
-          element={<Orders stripeApiKey={stripeApiKey} />}
+          element={
+            user?.User ? <Orders stripeApiKey={stripeApiKey} /> : <Login />
+          }
         ></Route>
       </Routes>
 

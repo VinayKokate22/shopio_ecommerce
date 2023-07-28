@@ -25,6 +25,8 @@ const Login = () => {
       const response = await axios.post(url, { email, password }, config);
       if (response) {
         localStorage.setItem("user", JSON.stringify(response.data));
+        console.log(response.data);
+        console.log(JSON.stringify(response.data));
         dispatch(Usersuccessfull(response.data));
         toast.dismiss("loadingToast");
 

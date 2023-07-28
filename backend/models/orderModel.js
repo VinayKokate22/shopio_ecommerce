@@ -1,3 +1,4 @@
+const { text } = require("body-parser");
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
@@ -42,8 +43,9 @@ const orderSchema = new mongoose.Schema({
         required: true,
       },
       product: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Product",
+        // type: mongoose.Schema.ObjectId,
+        // ref: "Product",
+        type: String,
         required: true,
       },
     },

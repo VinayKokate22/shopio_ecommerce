@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateCount } from "../../store/slices/CartSlice";
+import { deleteProduct, updateCount } from "../../store/slices/CartSlice";
 import { useNavigate } from "react-router-dom";
 
 const SingleCartItem = ({ Product, itemCount }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [Count, setCount] = useState(itemCount);
+  const handledeleteproductfromcart = async () => {
+    const newProduct = { Product, itemCount: Count };
+    dispatch(deleteProduct(newProduct));
+  };
   useEffect(() => {
     const newProduct = { Product, itemCount: Count };
     console.log("Count", Count);
@@ -59,7 +63,7 @@ const SingleCartItem = ({ Product, itemCount }) => {
           </button>
         </div>
         <div className="delete_button">
-          <button>delete</button>
+          <button onClick={handledeleteproductfromcart}>delete</button>
         </div>
       </div>
 

@@ -49,7 +49,6 @@ const loginUser = asyncHandler(async (req, res, next) => {
 
 const logoutUser = asyncHandler(async (req, res, next) => {
   try {
-    console.log("1");
     res.cookie("token", null, {
       expires: new Date(Date.now()),
       httpOnly: true,
@@ -66,16 +65,14 @@ const logoutUser = asyncHandler(async (req, res, next) => {
 
 const forgotPassword = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
-  console.log("1");
+
   if (!user) {
     res.status(404);
     throw new Error("user not found");
   }
-  console.log("2");
 
   const resetToken = user.getResetPasswordToken();
   await user.save({ validateBeforeSave: false });
-  console.log("3");
 
   const resetPasswordUrl = `${req.protocol}://${req.get(
     "host"
@@ -140,7 +137,6 @@ const updateProfile = asyncHandler(async (req, res) => {
       name: req.body.name,
       email: req.body.email,
     };
-    console.log(newUserData);
 
     if (!newUserData.name || !newUserData.email) {
       res.status(400);
@@ -189,7 +185,6 @@ const updateRole = asyncHandler(async (req, res) => {
     const newUserData = {
       role: req.body.role,
     };
-    console.log(newUserData);
 
     // if (!newUserData.name || !newUserData.email || !newUserData.role) {
     //   res.status(400);

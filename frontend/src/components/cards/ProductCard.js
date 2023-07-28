@@ -5,12 +5,13 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Loading from "../loading/Loading";
 import ArrowRightAltRoundedIcon from "@mui/icons-material/ArrowRightAltRounded";
+
+//these options are the attribute for reactstart used for the product rating
 const options = {
   edit: false,
   color: "rgba(20,20,20,0.1)",
   activeColor: "#000000",
   size: window.innerWidth < 600 ? 15 : 20,
-  value: 2.5,
   isHalf: true,
 };
 
@@ -19,11 +20,18 @@ const ProductCard = () => {
   const handleselectedProduct = (id) => {
     navigate(`/product/${id}`);
   };
+
   const data = useSelector((state) => {
     return state.product;
   });
-  console.log(data);
-  // console.log(data.loading);
+  //this is what data consist of (fetched from productslice)
+  // const initialState = {
+  //   loading: true,
+  //   product: null,
+  //   error: false,
+  //   productCount: null,
+  // };
+  //reducers are 1)updatedata 2)updatedata_loading 3)updatedata_error
 
   return (
     <>

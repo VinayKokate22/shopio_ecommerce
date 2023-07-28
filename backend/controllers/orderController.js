@@ -6,19 +6,19 @@ const newOrder = asyncHandler(async (req, res) => {
   try {
     const {
       shippingInfo,
-      orderItems,
+      orderItem,
       paymentInfo,
-      itemsPrice,
+      itemPrice,
       taxPrice,
       shippingPrice,
       totalPrice,
     } = req.body;
-
+    console.log("orderItems", orderItem);
     const order = await Order.create({
       shippingInfo,
-      orderItems,
+      orderItem,
       paymentInfo,
-      itemsPrice,
+      itemPrice,
       taxPrice,
       shippingPrice,
       totalPrice,
@@ -68,29 +68,42 @@ async function updateStock(id, quantity) {
   await product.save({ validateBeforeSave: false });
 }
 const updateOrder = asyncHandler(async (req, res) => {
-  const orders = await Order.find(req.params.id);
-  if (!orders) {
-    res.status(404);
-    throw new Error("order not found with this id");
-  }
-  if (orders.orderStatus === "Delivered") {
-    res.status(400);
-    throw new Error("you have already delivered this order");
-  }
-  orders.orderItems.forEach((order) => {
-    updateStock(order.product, order.quantity);
-  });
-  orders.orderStatus = req.body.status;
-  if (req.body.status === "Delivered") {
-    orders.deliveredAt = Date.now();
-  }
+  try {
+    console.log("the body", req.body);
+    const orders = await Order.findById(req.params.id);
 
-  await orders.save({ validateBeforeSave: false });
-  res.status(200).json({
-    success: true,
-    totalAmount,
-    orders,
-  });
+    if (!orders) {
+      res.status(404);
+      throw new Error("order not found with this id");
+    }
+    console.log("1");
+    if (orders.orderStatus === "Delivered") {
+      res.status(400);
+      throw new Error("you have already delivered this order");
+    }
+    console.log("2");
+
+    orders.orderItem.forEach((order) => {
+      updateStock(order.product, order.quantity);
+    });
+    console.log("3");
+    orders.orderStatus = req.body.status;
+    if (req.body.status === "Delivered") {
+      orders.deliveredAt = Date.now();
+    }
+    console.log("4");
+
+    await orders.save({ validateBeforeSave: false });
+    console.log("5");
+
+    res.status(200).json({
+      success: true,
+      orders,
+    });
+  } catch (error) {
+    res.status(400);
+    throw new Error(error.message);
+  }
 });
 
 const getAllOrders = asyncHandler(async (req, res) => {
